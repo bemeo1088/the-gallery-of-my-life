@@ -8,7 +8,9 @@ myApp.controller('welcomeController', function (){
     };
     welcome.recordList = [];
 
-    
+    welcome.addRecord = function(recordToAdd){
+        
+    }
 
 
 
