@@ -16,24 +16,27 @@
         <div class="panel-heading">
             <h1>THE GALLERY OF MY LIFE</h1>
         </div>
-        <div ng-controller="welcomeController as rc" class="panel-body">
-            Is Angular working? {{4===4}}
-            <div>
-                Picture name: {{rc.picture.name}}
-
+    </div>
+        <div ng-controller="welcomeController" class="panel-body" >
+            <div class="col-lg-6" ng-repeat="picture in pictures">
+                <img src="/images/{{picture.pic}}" style="height:400px; width:500px" ng-hide="hides[picture.index]" ng-click="ShowHide(picture.index)"/> <br />
+                <div ng-show="hides[picture.index]" ng-click="ShowHide(picture.index)" style="height:400px; width:500px; background-color:rgb(184, 73, 13); text-align: center; vertical-align:middle">
+                    {{picture.name}}
+                </div>
+                <br />
+                <button ng-click="like(picture)">Love
+                    <i class="glyphicon glyphicon-heart"></i>
+                </button>
+                <span>{{picture.like}}</span>
+                <br />
+                <br />
+            
             </div>
-            <div>
-                <img src="/images/pic-1.png" alt="" style="height:400px; width:500px"/>
-            </div>
-
         </div>
 
 
+       
+   
 
-
-
-
-
-    </div>
 </body>
 </html>
